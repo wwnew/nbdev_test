@@ -2,11 +2,12 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"compute": "00_core.ipynb",
-         "multi": "01_core.ipynb",
-         "combined_cos": "index.ipynb"}
+index = {"add": "00_core.ipynb",
+         "multi": "00_core.ipynb",
+         "combined_cos": "01_core.ipynb"}
 
-modules = ["core.py"]
+modules = ["computer.py",
+           "trigono.py"]
 
 doc_url = "https://wwnew.github.io/nbdev_test/"
 
