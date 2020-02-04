@@ -1,11 +1,11 @@
 ---
 
-title: nbdev test
+title: Title
 
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "functional test"
+summary: "summary"
 ---
 <!--
 
@@ -22,18 +22,24 @@ summary: "functional test"
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev_test.computer</span> <span class="k">import</span> <span class="o">*</span>
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="nbdev-report&#35797;&#29992;&#25253;&#21578;">nbdev report&#35797;&#29992;&#25253;&#21578;<a class="anchor-link" href="#nbdev-report&#35797;&#29992;&#25253;&#21578;">&#182;</a></h1><p>nbdev GitHub 地址：<a href="https://github.com/fastai/nbdev/">https://github.com/fastai/nbdev/</a>
+nbdev 文档：<a href="https://nbdev.fast.ai/">https://nbdev.fast.ai/</a></p>
+<blockquote><p>install 安装软件
+export  自动创建导出 Python 模块
+执行代码导航和编辑，并将所有更改自动导出回 notebook 中
+doc 自动生成文档
+test 测试
+CI 持续集成
+version control 版本控制和冲突处理</p>
+</blockquote>
 
 </div>
 </div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -50,7 +56,8 @@ summary: "functional test"
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Install">Install<a class="anchor-link" href="#Install">&#182;</a></h2>
+<h2 id="Install-&#23433;&#35013;&#36719;&#20214;">Install &#23433;&#35013;&#36719;&#20214;<a class="anchor-link" href="#Install-&#23433;&#35013;&#36719;&#20214;">&#182;</a></h2><p>使用pip命令</p>
+
 </div>
 </div>
 </div>
@@ -69,7 +76,9 @@ summary: "functional test"
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-use">How to use<a class="anchor-link" href="#How-to-use">&#182;</a></h2>
+<p>安装完后从github上clone一个模板<a href="https://github.com/fastai/nbdev_template/generate">https://github.com/fastai/nbdev_template/generate</a>
+然后对其中的setup.ini文件进行编辑</p>
+
 </div>
 </div>
 </div>
@@ -78,69 +87,43 @@ summary: "functional test"
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Fill me in please! Don't forget code examples:</p>
+<h2 id="&#23548;&#20986;&#27169;&#22359;">&#23548;&#20986;&#27169;&#22359;<a class="anchor-link" href="#&#23548;&#20986;&#27169;&#22359;">&#182;</a></h2><h3 id="&#20351;&#29992;&#21629;&#20196;&#34892;&#26041;&#24335;">&#20351;&#29992;&#21629;&#20196;&#34892;&#26041;&#24335;<a class="anchor-link" href="#&#20351;&#29992;&#21629;&#20196;&#34892;&#26041;&#24335;">&#182;</a></h3><p>直接在命令行窗口输入nbdev_build_lib</p>
+<h3 id="&#22312;notebook&#26368;&#21518;&#25554;&#20837;cell&#65292;&#20351;&#29992;&#20854;&#20013;&#30340;export&#21253;&#65292;notebook2script">&#22312;notebook&#26368;&#21518;&#25554;&#20837;cell&#65292;&#20351;&#29992;&#20854;&#20013;&#30340;export&#21253;&#65292;notebook2script<a class="anchor-link" href="#&#22312;notebook&#26368;&#21518;&#25554;&#20837;cell&#65292;&#20351;&#29992;&#20854;&#20013;&#30340;export&#21253;&#65292;notebook2script">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>然后我们就可以在nbdev_test目录下看到自动生成的文件，同时我们可以从中导入对应的模块使用其中定义的函数</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">multi</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev_test.computer</span> <span class="k">import</span> <span class="o">*</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt"></div>
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>12
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.export</span> <span class="k">import</span> <span class="o">*</span>
-<span class="n">notebook2script</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## doc 自动生成文档</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt"></div>
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Converted 00_core.ipynb.
-Converted 01_core.ipynb.
-Converted index.ipynb.
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
