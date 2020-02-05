@@ -4,7 +4,9 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"add": "00_core.ipynb",
          "multi": "00_core.ipynb",
-         "combined_cos": "01_core.ipynb"}
+         "combined_cos": "01_core.ipynb",
+         "say_hello": "01_core.ipynb",
+         "HelloSayer": "01_core.ipynb"}
 
 modules = ["computer.py",
            "trigono.py"]

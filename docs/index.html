@@ -87,16 +87,11 @@ version control 版本控制和冲突处理</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="&#23548;&#20986;&#27169;&#22359;">&#23548;&#20986;&#27169;&#22359;<a class="anchor-link" href="#&#23548;&#20986;&#27169;&#22359;">&#182;</a></h2><h3 id="&#20351;&#29992;&#21629;&#20196;&#34892;&#26041;&#24335;">&#20351;&#29992;&#21629;&#20196;&#34892;&#26041;&#24335;<a class="anchor-link" href="#&#20351;&#29992;&#21629;&#20196;&#34892;&#26041;&#24335;">&#182;</a></h3><p>直接在命令行窗口输入nbdev_build_lib</p>
-<h3 id="&#22312;notebook&#26368;&#21518;&#25554;&#20837;cell&#65292;&#20351;&#29992;&#20854;&#20013;&#30340;export&#21253;&#65292;notebook2script">&#22312;notebook&#26368;&#21518;&#25554;&#20837;cell&#65292;&#20351;&#29992;&#20854;&#20013;&#30340;export&#21253;&#65292;notebook2script<a class="anchor-link" href="#&#22312;notebook&#26368;&#21518;&#25554;&#20837;cell&#65292;&#20351;&#29992;&#20854;&#20013;&#30340;export&#21253;&#65292;notebook2script">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#23548;&#20986;&#27169;&#22359;">&#23548;&#20986;&#27169;&#22359;<a class="anchor-link" href="#&#23548;&#20986;&#27169;&#22359;">&#182;</a></h2><h3 id="*&#20351;&#29992;&#21629;&#20196;&#34892;&#26041;&#24335;">*&#20351;&#29992;&#21629;&#20196;&#34892;&#26041;&#24335;<a class="anchor-link" href="#*&#20351;&#29992;&#21629;&#20196;&#34892;&#26041;&#24335;">&#182;</a></h3><p>直接在命令行窗口输入nbdev_build_lib 将会在同名目录下生成对应的.py文件</p>
+<h3 id="*&#22312;notebook&#26368;&#21518;&#25554;&#20837;cell&#65292;&#20351;&#29992;&#20854;&#20013;&#30340;export&#21253;&#65292;notebook2script">*&#22312;notebook&#26368;&#21518;&#25554;&#20837;cell&#65292;&#20351;&#29992;&#20854;&#20013;&#30340;export&#21253;&#65292;notebook2script<a class="anchor-link" href="#*&#22312;notebook&#26368;&#21518;&#25554;&#20837;cell&#65292;&#20351;&#29992;&#20854;&#20013;&#30340;export&#21253;&#65292;notebook2script">&#182;</a></h3><div class="highlight"><pre><span></span><span class="c1">#hide</span>
+<span class="kn">from</span> <span class="nn">nbdev.export</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">notebook2script</span><span class="p">()</span>
+</pre></div>
 <p>然后我们就可以在nbdev_test目录下看到自动生成的文件，同时我们可以从中导入对应的模块使用其中定义的函数</p>
 
 </div>
@@ -115,18 +110,50 @@ version control 版本控制和冲突处理</p>
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## doc 自动生成文档</span>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="doc-&#33258;&#21160;&#29983;&#25104;&#25991;&#26723;">doc &#33258;&#21160;&#29983;&#25104;&#25991;&#26723;<a class="anchor-link" href="#doc-&#33258;&#21160;&#29983;&#25104;&#25991;&#26723;">&#182;</a></h2><p>使用命令行工具nbdev_build_docs会自动生成docs，并将index.ipynb中的内容更新到对应的readme文件中。</p>
+<div class="highlight"><pre><span></span><span class="c1">#export</span>
+<span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="n">to</span><span class="p">):</span>
+    <span class="s2">&quot;Say hello to somebody&quot;</span> <span class="c1">#引号内为function描述，会自动在文档中生成</span>
+    <span class="k">return</span> <span class="n">f</span><span class="s1">&#39;Hello {to}!&#39;</span>
+
+<span class="k">assert</span> <span class="n">say_hello</span><span class="p">(</span><span class="s2">&quot;Jeremy&quot;</span><span class="p">)</span><span class="o">==</span><span class="s2">&quot;Hello Jeremy!&quot;</span>
+</pre></div>
+<p>除了使用命令行工具，还可以在notebook中运行如下代码show_doc(),可在celloutput中查看文档生成内容</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.showdoc</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">show_doc</span><span class="p">(</span><span class="n">HelloSayer</span><span class="o">.</span><span class="n">say</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#23558;&#26356;&#25913;&#33258;&#21160;&#23548;&#22238;-notebook-&#20013;">&#23558;&#26356;&#25913;&#33258;&#21160;&#23548;&#22238; notebook &#20013;<a class="anchor-link" href="#&#23558;&#26356;&#25913;&#33258;&#21160;&#23548;&#22238;-notebook-&#20013;">&#182;</a></h2><p>在命令行中nbdev_update_lib 会把lib中的改动导回笔记本。<br>
+通过修改lib文件（即computer.py）,可以将py文件中的改动同步到notebook中。。</p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#20844;&#24335;&#34920;&#31034;">&#20844;&#24335;&#34920;&#31034;<a class="anchor-link" href="#&#20844;&#24335;&#34920;&#31034;">&#182;</a></h2><p>例子：可以将公式表示出来</p>
+
+<pre><code>This version is diplayed inline: $\sum_{i=1}^{k+1}i$ . You can include text before and after.</code></pre>
+<p>This version is diplayed inline: $\sum_{i=1}^{k+1}i$ . You can include text before and after.</p>
+
+</div>
+</div>
 </div>
 </div>
  

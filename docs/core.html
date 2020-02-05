@@ -27,26 +27,26 @@ summary: "summary"
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="computer">computer<a class="anchor-link" href="#computer">&#182;</a></h1><p>API 介绍</p>
-<blockquote><p>add(a,b)
-multi(a,b)</p>
-</blockquote>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.showdoc</span> <span class="k">import</span> <span class="o">*</span>
+<p>使用下面两行命令可以自动reload</p>
+<div class="highlight"><pre><span></span><span class="c1">#hide</span>
+<span class="o">%</span><span class="n">load_ext</span> <span class="n">autoreload</span>
+<span class="o">%</span><span class="n">autoreload</span> <span class="mi">2</span>
 </pre></div>
 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="computer">computer<a class="anchor-link" href="#computer">&#182;</a></h1><h2 id="API-&#20171;&#32461;">API &#20171;&#32461;<a class="anchor-link" href="#API-&#20171;&#32461;">&#182;</a></h2><blockquote><p>函数 add(a,b)
+函数 multi(a,b)</p>
+</blockquote>
 
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
@@ -63,6 +63,7 @@ multi(a,b)</p>
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="add" class="doc_header"><code>add</code><a href="https://github.com/wwnew/nbdev_test/tree/master/nbdev_test/computer.py#L6" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>add</code>(<strong><code>a</code></strong>, <strong><code>b</code></strong>)</p>
 </blockquote>
+<p>加法运算，返回两数之和</p>
 
 </div>
 
@@ -85,8 +86,9 @@ multi(a,b)</p>
 <div class="prompt"> </div>
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="multi" class="doc_header"><code>multi</code><a href="https://github.com/wwnew/nbdev_test/tree/master/nbdev_test/computer.py#L10" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>multi</code>(<strong><code>a</code></strong>, <strong><code>b</code></strong>)</p>
+<h4 id="multi" class="doc_header"><code>multi</code><a href="https://github.com/wwnew/nbdev_test/tree/master/nbdev_test/computer.py#L11" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>multi</code>(<strong><code>a</code></strong>, <strong><code>b</code></strong>)</p>
 </blockquote>
+<p>乘法运算，返回两数之积</p>
 
 </div>
 
@@ -105,6 +107,159 @@ multi(a,b)</p>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cfg</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span><span class="n">cfg_name</span><span class="o">=</span><span class="s1">&#39;settings.ini&#39;</span><span class="p">)</span>
+
+<span class="n">test_eq</span><span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">lib_name</span><span class="p">,</span> <span class="s1">&#39;nbdev_test&#39;</span><span class="p">)</span>
+<span class="n">test_eq</span><span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">git_url</span><span class="p">,</span> <span class="s2">&quot;https://github.com/wwnew/nbdev_test/tree/master/&quot;</span><span class="p">)</span>
+<span class="n">test_eq</span><span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">lib_path</span><span class="p">,</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span><span class="o">/</span><span class="s1">&#39;nbdev_test&#39;</span><span class="o">/</span><span class="s1">&#39;nbdev_test&#39;</span><span class="p">)</span>
+<span class="n">test_eq</span><span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">nbs_path</span><span class="p">,</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">())</span>
+<span class="n">test_eq</span><span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">doc_path</span><span class="p">,</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span><span class="o">/</span><span class="s1">&#39;nbdev_test&#39;</span><span class="o">/</span><span class="s1">&#39;docs&#39;</span><span class="p">)</span>
+<span class="n">test_eq</span><span class="p">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">custom_sidebar</span><span class="p">,</span> <span class="s1">&#39;True&#39;</span><span class="p">)</span>
+
+<span class="n">test_eq</span><span class="p">(</span><span class="n">last_index</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]),</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">o</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="mi">0</span><span class="p">:</span> <span class="p">(</span><span class="n">o</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">p</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">o</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span> <span class="p">(</span><span class="n">o</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">p</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f2</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">test_eq</span><span class="p">(</span><span class="n">f2</span><span class="p">(</span><span class="n">f1</span><span class="p">(</span><span class="mi">3</span><span class="p">)),</span> <span class="n">compose</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span><span class="n">f2</span><span class="p">)(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">test_eq</span><span class="p">(</span><span class="n">f2</span><span class="p">(</span><span class="n">f1</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span><span class="n">p</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span> <span class="n">compose</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span><span class="n">f2</span><span class="p">)(</span><span class="mi">3</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">test_eq</span><span class="p">(</span><span class="n">f2</span><span class="p">(</span><span class="n">f1</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span>  <span class="mi">3</span><span class="p">),</span>  <span class="mi">3</span><span class="p">),</span> <span class="n">compose</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span><span class="n">f2</span><span class="p">)(</span><span class="mi">3</span><span class="p">,</span>  <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>3.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span><span class="o">,</span><span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">add_one</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span> 
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">a</span>
+
+<span class="n">inp</span><span class="p">,</span><span class="n">exp</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">51</span><span class="p">)</span>
+<span class="c1">#test_eq(parallel(add_one, inp, n_workers=2), list(exp))</span>
+<span class="c1">#test_eq(parallel(add_one, inp, n_workers=0), list(exp))</span>
+<span class="c1">#test_eq(parallel(add_one, inp, n_workers=1, a=2), list(range(2,52)))</span>
+<span class="c1">#test_eq(parallel(add_one, inp, n_workers=0, a=2), list(range(2,52)))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.nbformat</span> <span class="k">import</span> <span class="o">*</span>
+<span class="n">test_nb</span> <span class="o">=</span> <span class="n">read_nb</span><span class="p">(</span><span class="s1">&#39;01_core.ipynb&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">ModuleNotFoundError</span>                       Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-22-a473c918e9b6&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span><span class="ansi-green-intense-fg ansi-bold">from</span> nbdev<span class="ansi-yellow-intense-fg ansi-bold">.</span>nbformat <span class="ansi-green-intense-fg ansi-bold">import</span> <span class="ansi-yellow-intense-fg ansi-bold">*</span>
+<span class="ansi-green-fg">      2</span> test_nb <span class="ansi-yellow-intense-fg ansi-bold">=</span> read_nb<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;01_core.ipynb&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-red-intense-fg ansi-bold">ModuleNotFoundError</span>: No module named &#39;nbdev.nbformat&#39;</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.export</span> <span class="k">import</span> <span class="n">DocsTestClass</span>
+<span class="n">test_eq</span><span class="p">(</span><span class="n">get_name</span><span class="p">(</span><span class="n">in_ipython</span><span class="p">),</span> <span class="s1">&#39;in_ipython&#39;</span><span class="p">)</span>
+<span class="n">test_eq</span><span class="p">(</span><span class="n">get_name</span><span class="p">(</span><span class="n">DocsTestClass</span><span class="o">.</span><span class="n">test</span><span class="p">),</span> <span class="s1">&#39;test&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-39-9dd8843e236c&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      1</span> <span class="ansi-green-intense-fg ansi-bold">from</span> nbdev<span class="ansi-yellow-intense-fg ansi-bold">.</span>export <span class="ansi-green-intense-fg ansi-bold">import</span> DocsTestClass
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 2</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>test_eq<span class="ansi-yellow-intense-fg ansi-bold">(</span>get_name<span class="ansi-yellow-intense-fg ansi-bold">(</span>in_ipython<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-blue-intense-fg ansi-bold">&#39;in_ipython&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">      3</span> test_eq<span class="ansi-yellow-intense-fg ansi-bold">(</span>get_name<span class="ansi-yellow-intense-fg ansi-bold">(</span>DocsTestClass<span class="ansi-yellow-intense-fg ansi-bold">.</span>test<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-blue-intense-fg ansi-bold">&#39;test&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;get_name&#39; is not defined</pre>
+</div>
+</div>
+
 </div>
 </div>
 

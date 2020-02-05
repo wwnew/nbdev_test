@@ -4,8 +4,10 @@ __all__ = ['add', 'multi']
 
 # Cell
 def add(a,b):
+    "加法运算，返回两数之和"
     return a+b
 
 # Cell
 def multi(a,b):
+    "乘法运算，返回两数之积"
     return a*b
